@@ -1,0 +1,50 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("AOM#2007", "DarkTheme")
+local Tab = Window:NewTab("Menu")
+local Section = Tab:NewSection("Choose a door")
+
+Section:NewToggle("checkpoint x35 coin ", "ToggleInfo", function(state)
+    if state then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135, 91246, 62) 
+    else
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(84, 3, 29) 
+    end
+end)
+Section:NewToggle("checkpoint x30 coin", "ToggleInfo", function(state)
+    if state then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(135, 87051, 61) 
+    else
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(84, 3, 29) 
+    end
+end)
+Section:NewToggle("checkpoint x25 coin", "ToggleInfo", function(state)
+    if state then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(136, 83199, 63)
+    else
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(84, 3, 29) 
+    end
+end)
+Section:NewToggle("checkpoint x20 coin ", "ToggleInfo", function(state)
+    if state then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(142, 79747, 66)
+    else
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(84, 3, 29) 
+    end
+end)
+
+local Section1 = Tab:NewSection("auto Click")
+Section1:NewToggle("auto", "ToggleInfo", function(state)
+    if state then
+        while wait() do
+            local args = {
+                [0.1] = "swingKatana"
+            }
+            
+            game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
+            
+        end
+        
+    else
+        
+    end
+end)

@@ -31,18 +31,3 @@ Section:NewToggle("checkpoint x20 coin ", "ToggleInfo", function(state)
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(84, 3, 29) 
     end
 end)
-
-local Section1 = Tab:NewSection("auto Click")
-Section1:NewToggle("auto", "ToggleInfo", function(state)
-    if state then
-        while wait() do
-            local args = {
-                [1] = "swingKatana"
-            }
-            game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
-        end
-        
-    else
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(84, 3, 29) 
-    end
-end)
